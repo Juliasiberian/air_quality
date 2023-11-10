@@ -1,5 +1,5 @@
-require "faraday"
-require "nokogiri"
+require "faraday" # downloading web doc
+require "nokogiri" # parsing string
 
 class Dirty
   def initialize(city)
@@ -8,8 +8,9 @@ class Dirty
   
   def call 
     response = Faraday.get(link)
-    doc = Nokogiri::HTML(response.body)
-    doc.search(".aqi-value__value").text
+    page_content = response.body
+    doc = Nokogiri::HTML(page_content)
+    doc.search(".aqi-value__value").text # css класс
   end  
 
   def link
