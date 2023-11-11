@@ -12,7 +12,7 @@ class MediaPlayer
   def content_checker
     if (digit >= 78)
       puts "./videos/rain.mp4"
-      "ffmpeg /home/vboxuser/projects/ruby_projects/air_quality/videos/rain.mp4"
+      system "ffmpeg /home/vboxuser/projects/ruby_projects/air_quality/videos/rain.mp4"
     elsif (digit < 78)
       puts "./videos/sunny_day.mp4"
       "ffmpeg /home/vboxuser/projects/ruby_projects/air_quality/videos/sunny_day.mp4"
