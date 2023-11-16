@@ -5,7 +5,7 @@ loop do
     dirty_value = page_object.call
     
     media_player_object = MediaPlayer.new(dirty_value)
-    media_player_object.call 
+    media_player_object.call
 
     sleep 1
 end
